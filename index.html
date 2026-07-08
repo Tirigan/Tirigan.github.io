@@ -4,14 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tirigan | Cybersecurity</title>
-  <meta name="description" content="Matthew's cybersecurity portfolio — detection engineering, Purple Team research, Hack The Box, and security tooling." />
+  <meta name="description" content="Matthew's cybersecurity portfolio — detection engineering, security research, Hack The Box, and security tooling." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --green:       #00ff41;
-      --cyan:        #00d4ff;
-      --purple:      #9d7fff;
+      --purple:      #a259ff;
+      --purple-glow: rgba(162, 89, 255, 0.3);
+      --purple-tint: rgba(162, 89, 255, 0.04);
+      --purple-semi: rgba(162, 89, 255, 0.25);
+      --purple-hover: rgba(162, 89, 255, 0.5);
       --orange:      #ff8c42;
       --bg:          #07090a;
       --bg2:         #0c1014;
@@ -98,7 +101,7 @@
     }
 
     .nav-logo .slash { color: var(--muted); }
-    .nav-logo .accent { color: var(--cyan); }
+    .nav-logo .accent { color: var(--purple); }
 
     nav ul {
       display: flex;
@@ -115,7 +118,7 @@
       transition: color 0.2s;
     }
 
-    nav ul a:hover { color: var(--cyan); }
+    nav ul a:hover { color: var(--purple); }
 
     /* HERO */
     .hero {
@@ -125,7 +128,7 @@
     .hero-eyebrow {
       font-family: var(--font-mono);
       font-size: 0.72rem;
-      color: var(--cyan);
+      color: var(--purple);
       letter-spacing: 0.2em;
       text-transform: uppercase;
       margin-bottom: 1.4rem;
@@ -145,15 +148,15 @@
 
     .hero h1 em {
       font-style: normal;
-      color: var(--cyan);
-      text-shadow: 0 0 28px rgba(0,212,255,0.3);
+      color: var(--purple);
+      text-shadow: 0 0 28px var(--purple-glow);
     }
 
     .cursor-blink {
       display: inline-block;
       width: 2px;
       height: 0.85em;
-      background: var(--cyan);
+      background: var(--purple);
       margin-left: 3px;
       vertical-align: middle;
       animation: blink 1s step-end infinite;
@@ -194,14 +197,14 @@
     }
 
     .chip:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
+      border-color: var(--purple);
+      color: var(--purple);
     }
 
     .chip.hi {
-      border-color: rgba(0,212,255,0.3);
-      color: var(--cyan);
-      background: rgba(0,212,255,0.04);
+      border-color: var(--purple-semi);
+      color: var(--purple);
+      background: var(--purple-tint);
     }
 
     /* TERMINAL */
@@ -248,8 +251,8 @@
     .tp  { color: var(--green); }
     .tc  { color: var(--text); }
     .tk  { color: var(--muted2); }
-    .tv  { color: var(--cyan); }
-    .tv2 { color: var(--purple); }
+    .tv  { color: var(--purple); }
+    .tv2 { color: #c084fc; }
     .tv3 { color: var(--orange); }
     .ts  { color: var(--green); }
 
@@ -265,7 +268,7 @@
     .sec-label {
       font-family: var(--font-mono);
       font-size: 0.68rem;
-      color: var(--cyan);
+      color: var(--purple);
       letter-spacing: 0.18em;
       text-transform: uppercase;
       margin-bottom: 0.4rem;
@@ -315,14 +318,14 @@
       transition: opacity 0.3s;
     }
 
-    .pcard.cyan-card::before  { background: radial-gradient(ellipse at top left, rgba(0,212,255,0.05), transparent 70%); }
+    .pcard.purple-card::before  { background: radial-gradient(ellipse at top left, var(--purple-tint), transparent 70%); }
     .pcard.green-card::before { background: radial-gradient(ellipse at top left, rgba(0,255,65,0.04), transparent 70%); }
 
     .pcard:hover {
       transform: translateY(-3px);
     }
 
-    .pcard.cyan-card:hover  { border-color: rgba(0,212,255,0.5); box-shadow: 0 10px 40px rgba(0,212,255,0.08); }
+    .pcard.purple-card:hover  { border-color: var(--purple-hover); box-shadow: 0 10px 40px rgba(162, 89, 255, 0.08); }
     .pcard.green-card:hover { border-color: rgba(0,255,65,0.4); box-shadow: 0 10px 40px rgba(0,255,65,0.07); }
 
     .pcard:hover::before { opacity: 1; }
@@ -347,7 +350,7 @@
       letter-spacing: 0.08em;
     }
 
-    .badge-cyan  { background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); color: var(--cyan); }
+    .badge-purple  { background: rgba(162, 89, 255, 0.08); border: 1px solid var(--purple-semi); color: var(--purple); }
     .badge-green { background: rgba(0,255,65,0.06); border: 1px solid rgba(0,255,65,0.2); color: var(--green); }
 
     .pcard-title {
@@ -391,7 +394,7 @@
       transition: gap 0.2s;
     }
 
-    .cyan-card  .pcard-link { color: var(--cyan); }
+    .purple-card  .pcard-link { color: var(--purple); }
     .green-card .pcard-link { color: var(--green); }
     .pcard:hover .pcard-link { gap: 0.7rem; }
 
@@ -457,7 +460,7 @@
       color: var(--muted);
     }
 
-    .footer-text a { color: var(--cyan); text-decoration: none; }
+    .footer-text a { color: var(--purple); text-decoration: none; }
 
     .footer-links {
       display: flex;
@@ -472,7 +475,7 @@
       transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: var(--cyan); }
+    .footer-links a:hover { color: var(--purple); }
 
     /* ANIMATIONS */
     @keyframes fadeUp {
@@ -517,7 +520,7 @@
       Digging into how systems break, how defenders catch it, and how to build things that are harder to break. Interested in threat detection, vulnerability research, AI security, and everything in between.
     </p>
     <div class="chips">
-      <span class="chip hi">Purple Team</span>
+      <span class="chip hi">Blue Team</span>
       <span class="chip hi">Detection Engineering</span>
       <span class="chip hi">Hack The Box</span>
       <span class="chip">Bug Bounty</span>
@@ -538,7 +541,7 @@
         <div><span class="tp">$ </span><span class="tc">cat about.json</span></div>
         <div><span class="tk">{</span></div>
         <div>&nbsp;&nbsp;<span class="tk">"handle":</span>  <span class="tv">"Tirigan"</span><span class="tk">,</span></div>
-        <div>&nbsp;&nbsp;<span class="tk">"focus":</span>   <span class="tv">["Purple Team", "Detection Eng", "Security Research"]</span><span class="tk">,</span></div>
+        <div>&nbsp;&nbsp;<span class="tk">"focus":</span>   <span class="tv">["Blue Team", "Detection Eng", "Security Research"]</span><span class="tk">,</span></div>
         <div>&nbsp;&nbsp;<span class="tk">"also_into":</span> <span class="tv2">["Bug Bounty", "AI Security", "Threat Hunting"]</span><span class="tk">,</span></div>
         <div>&nbsp;&nbsp;<span class="tk">"learning":</span> <span class="tv3">"always"</span><span class="tk">,</span></div>
         <div>&nbsp;&nbsp;<span class="tk">"building":</span> <span class="ts">"in public → github.com/Tirigan"</span></div>
@@ -561,10 +564,10 @@
     </div>
 
     <div class="grid-2">
-      <a href="https://github.com/Tirigan/CyberJournal" target="_blank" rel="noopener" class="pcard cyan-card reveal">
+      <a href="https://github.com/Tirigan/CyberJournal" target="_blank" rel="noopener" class="pcard purple-card reveal">
         <div class="pcard-top">
           <span class="pcard-icon">📓</span>
-          <span class="pcard-badge badge-cyan">weekly</span>
+          <span class="pcard-badge badge-purple">weekly</span>
         </div>
         <h3 class="pcard-title">CyberJournal</h3>
         <p class="pcard-desc">
@@ -682,7 +685,7 @@
   function drawMatrix() {
     ctx.fillStyle = 'rgba(7, 9, 10, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00d4ff';
+    ctx.fillStyle = '#a259ff';
     ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
     drops.forEach((y, i) => {
       const char = chars[Math.floor(Math.random() * chars.length)];
@@ -697,7 +700,7 @@
   setInterval(drawMatrix, 55);
 
   // Typing animation
-  const phrases = ['Building in public.','Breaking things safely.','Security-focused mindset.','Always learning.','Always improving.','Focused on what matters.'];
+  const phrases = ['Building in public.', 'Breaking things to understand them.', 'Focused on what matters.'];
   let pIdx = 0, cIdx = 0, deleting = false;
   const el = document.getElementById('typed-line');
 
