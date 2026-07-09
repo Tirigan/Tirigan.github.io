@@ -320,6 +320,7 @@
 
     .pcard.purple-card::before  { background: radial-gradient(ellipse at top left, var(--purple-tint), transparent 70%); }
     .pcard.green-card::before { background: radial-gradient(ellipse at top left, rgba(0,255,65,0.04), transparent 70%); }
+    .pcard.orange-card::before { background: radial-gradient(ellipse at top left, rgba(255,140,66,0.05), transparent 70%); }
 
     .pcard:hover {
       transform: translateY(-3px);
@@ -327,6 +328,7 @@
 
     .pcard.purple-card:hover  { border-color: var(--purple-hover); box-shadow: 0 10px 40px rgba(162, 89, 255, 0.08); }
     .pcard.green-card:hover { border-color: rgba(0,255,65,0.4); box-shadow: 0 10px 40px rgba(0,255,65,0.07); }
+    .pcard.orange-card:hover { border-color: rgba(255,140,66,0.5); box-shadow: 0 10px 40px rgba(255,140,66,0.08); }
 
     .pcard:hover::before { opacity: 1; }
 
@@ -352,6 +354,7 @@
 
     .badge-purple  { background: rgba(162, 89, 255, 0.08); border: 1px solid var(--purple-semi); color: var(--purple); }
     .badge-green { background: rgba(0,255,65,0.06); border: 1px solid rgba(0,255,65,0.2); color: var(--green); }
+    .badge-orange { background: rgba(255,140,66,0.08); border: 1px solid rgba(255,140,66,0.35); color: var(--orange); }
 
     .pcard-title {
       font-family: var(--font-mono);
@@ -396,6 +399,7 @@
 
     .purple-card  .pcard-link { color: var(--purple); }
     .green-card .pcard-link { color: var(--green); }
+    .orange-card .pcard-link { color: var(--orange); }
     .pcard:hover .pcard-link { gap: 0.7rem; }
 
     /* FOCUS AREAS */
@@ -502,6 +506,7 @@
     <div class="nav-logo"><span class="slash">~/</span><span class="accent">tirigan</span></div>
     <ul>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#tools">Tools</a></li>
       <li><a href="#focus">Focus</a></li>
       <li><a href="https://github.com/Tirigan" target="_blank" rel="noopener">GitHub ↗</a></li>
     </ul>
@@ -609,6 +614,56 @@
 
 <hr class="divider" />
 
+<!-- TOOLS -->
+<div class="wrapper">
+  <section id="tools">
+    <div class="reveal">
+      <p class="sec-label">// built from scratch</p>
+      <h2 class="sec-title">Tools</h2>
+      <p class="sec-desc">Small Python utilities written to understand how the underlying mechanics actually work.</p>
+    </div>
+
+    <div class="grid-2">
+      <a href="https://github.com/Tirigan/Recon-Assistant" target="_blank" rel="noopener" class="pcard orange-card reveal">
+        <div class="pcard-top">
+          <span class="pcard-icon">🛰️</span>
+          <span class="pcard-badge badge-orange">python</span>
+        </div>
+        <h3 class="pcard-title">Recon-Assistant</h3>
+        <p class="pcard-desc">
+          Multi-threaded recon toolkit chaining port scanning, subdomain brute-forcing, HTTP header grabbing, and directory brute-forcing into one workflow, with a shared rate limiter and JSON/text reporting.
+        </p>
+        <div class="pcard-tags">
+          <span class="ptag">Recon</span>
+          <span class="ptag">Threading</span>
+          <span class="ptag">Rate Limiting</span>
+          <span class="ptag">Bug Bounty</span>
+        </div>
+        <span class="pcard-link">View on GitHub →</span>
+      </a>
+
+      <a href="https://github.com/Tirigan/HashAdder" target="_blank" rel="noopener" class="pcard orange-card reveal">
+        <div class="pcard-top">
+          <span class="pcard-icon">🔑</span>
+          <span class="pcard-badge badge-orange">python</span>
+        </div>
+        <h3 class="pcard-title">HashAdder</h3>
+        <p class="pcard-desc">
+          Command-line file-hashing utility — MD5, SHA-1, SHA-256, SHA-512 in one pass, with a comparison mode for verifying downloads or checking files against known hash values.
+        </p>
+        <div class="pcard-tags">
+          <span class="ptag">Hashing</span>
+          <span class="ptag">File Integrity</span>
+          <span class="ptag">CLI</span>
+        </div>
+        <span class="pcard-link">View on GitHub →</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+<hr class="divider" />
+
 <!-- FOCUS AREAS -->
 <div class="wrapper">
   <section id="focus">
@@ -662,6 +717,8 @@
     <div class="footer-links">
       <a href="https://github.com/Tirigan/CyberJournal" target="_blank">CyberJournal</a>
       <a href="https://github.com/Tirigan/HTB-Notes" target="_blank">HTB Notes</a>
+      <a href="https://github.com/Tirigan/Recon-Assistant" target="_blank">Recon-Assistant</a>
+      <a href="https://github.com/Tirigan/HashAdder" target="_blank">HashAdder</a>
       <a href="https://github.com/Tirigan" target="_blank">GitHub</a>
     </div>
   </div>
