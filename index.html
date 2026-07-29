@@ -402,6 +402,77 @@
     .orange-card .pcard-link { color: var(--orange); }
     .pcard:hover .pcard-link { gap: 0.7rem; }
 
+    /* DEPRECATED CARDS */
+    .pcard.deprecated {
+      opacity: 0.45;
+      filter: grayscale(0.4);
+    }
+    .pcard.deprecated:hover {
+      opacity: 0.65;
+      transform: none;
+    }
+    .badge-deprecated {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      letter-spacing: 0.08em;
+      background: rgba(74, 96, 112, 0.15);
+      border: 1px solid rgba(74, 96, 112, 0.4);
+      color: var(--muted2);
+    }
+
+    /* COMING SOON CARDS */
+    .badge-soon {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      letter-spacing: 0.08em;
+      background: rgba(255,140,66,0.06);
+      border: 1px solid rgba(255,140,66,0.25);
+      color: var(--orange);
+    }
+
+    /* FEATURED CARD — full width, more prominent */
+    .grid-featured {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .pcard.featured {
+      padding: 2.2rem 2.2rem 1.8rem;
+    }
+
+    .pcard.featured .pcard-title {
+      font-size: 1.3rem;
+    }
+
+    .pcard.featured .pcard-desc {
+      font-size: 0.87rem;
+      max-width: 620px;
+    }
+
+    .featured-pipeline {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1.4rem;
+      letter-spacing: 0.03em;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .featured-pipeline .pipe-step { color: var(--purple); }
+    .featured-pipeline .pipe-arrow { color: var(--muted); }
+    .featured-pipeline .pipe-opt { color: var(--orange); }
+
     /* FOCUS AREAS */
     .focus-grid {
       display: grid;
@@ -565,38 +636,66 @@
     <div class="reveal">
       <p class="sec-label">// repositories</p>
       <h2 class="sec-title">Projects</h2>
-      <p class="sec-desc">Structured learning and hands-on lab work — all documented and public.</p>
+      <p class="sec-desc">Active builds and research — documented and public.</p>
     </div>
 
-    <div class="grid-2">
-      <a href="https://github.com/Tirigan/CyberJournal" target="_blank" rel="noopener" class="pcard purple-card reveal">
+    <!-- Featured: reconbot -->
+    <div class="grid-featured">
+      <a href="https://github.com/Tirigan/reconbot" target="_blank" rel="noopener" class="pcard purple-card featured reveal">
         <div class="pcard-top">
-          <span class="pcard-icon">📓</span>
-          <span class="pcard-badge badge-purple">weekly</span>
+          <span class="pcard-icon">🤖</span>
+          <div style="display:flex;gap:0.5rem;align-items:center;">
+            <span class="pcard-badge badge-orange">python</span>
+            <span class="pcard-badge badge-green">active</span>
+          </div>
         </div>
-        <h3 class="pcard-title">CyberJournal</h3>
+        <h3 class="pcard-title">reconbot</h3>
         <p class="pcard-desc">
-          Weekly deep-dives into cybersecurity techniques — covering how attacks work, how defenders detect them, and how to actually implement the defenses. Includes labs, commands, and detection logic.
+          Local AI recon harness for bug bounty and security research. Chains ProjectDiscovery tools into a single automated pipeline, then feeds findings to a local LLM via Ollama for triage and plain-English summaries. No cloud APIs — everything runs on your own hardware.
         </p>
+        <div class="featured-pipeline">
+          <span class="pipe-step">subfinder</span>
+          <span class="pipe-arrow"> → </span>
+          <span class="pipe-step">dnsx</span>
+          <span class="pipe-arrow"> → </span>
+          <span class="pipe-step">httpx</span>
+          <span class="pipe-arrow"> → </span>
+          <span class="pipe-opt">[nuclei]</span>
+          <span class="pipe-arrow"> </span>
+          <span class="pipe-opt">[nmap]</span>
+          <span class="pipe-arrow"> </span>
+          <span class="pipe-opt">[katana]</span>
+          <span class="pipe-arrow"> </span>
+          <span class="pipe-opt">[ffuf]</span>
+          <span class="pipe-arrow"> → </span>
+          <span class="pipe-step">Ollama triage</span>
+          <span class="pipe-arrow"> → </span>
+          <span class="pipe-step">Markdown report</span>
+        </div>
         <div class="pcard-tags">
-          <span class="ptag">Windows Security</span>
-          <span class="ptag">Active Directory</span>
-          <span class="ptag">Sysmon</span>
-          <span class="ptag">SIEM</span>
-          <span class="ptag">Detection</span>
-          <span class="ptag">PowerShell</span>
+          <span class="ptag">Recon</span>
+          <span class="ptag">Bug Bounty</span>
+          <span class="ptag">Local LLM</span>
+          <span class="ptag">Nuclei</span>
+          <span class="ptag">Subfinder</span>
+          <span class="ptag">OSINT</span>
+          <span class="ptag">Pipeline</span>
+          <span class="ptag">Ollama</span>
         </div>
         <span class="pcard-link">View on GitHub →</span>
       </a>
+    </div>
 
+    <!-- Secondary: HTB Notes (coming soon) + CyberJournal (deprecated) -->
+    <div class="grid-2">
       <a href="https://github.com/Tirigan/HTB-Notes" target="_blank" rel="noopener" class="pcard green-card reveal">
         <div class="pcard-top">
           <span class="pcard-icon">🎯</span>
-          <span class="pcard-badge badge-green">active</span>
+          <span class="pcard-badge badge-soon">coming soon</span>
         </div>
         <h3 class="pcard-title">HTB Notes</h3>
         <p class="pcard-desc">
-          Notes and writeups from Hack The Box machines and challenges. Documents the attack path, tools used, and how each technique maps to real-world detection and defense.
+          Notes and writeups from Hack The Box machines. Attack paths, tools, and how each technique maps to real-world detection. Getting started soon.
         </p>
         <div class="pcard-tags">
           <span class="ptag">Hack The Box</span>
@@ -604,7 +703,25 @@
           <span class="ptag">Linux</span>
           <span class="ptag">Windows</span>
           <span class="ptag">Privesc</span>
-          <span class="ptag">Web</span>
+        </div>
+        <span class="pcard-link">View on GitHub →</span>
+      </a>
+
+      <a href="https://github.com/Tirigan/CyberJournal" target="_blank" rel="noopener" class="pcard purple-card deprecated reveal">
+        <div class="pcard-top">
+          <span class="pcard-icon">📓</span>
+          <span class="badge-deprecated">deprecated</span>
+        </div>
+        <h3 class="pcard-title">CyberJournal</h3>
+        <p class="pcard-desc">
+          Weekly deep-dives into cybersecurity techniques — attacks, detections, and implementation. Archived.
+        </p>
+        <div class="pcard-tags">
+          <span class="ptag">Windows Security</span>
+          <span class="ptag">Active Directory</span>
+          <span class="ptag">Sysmon</span>
+          <span class="ptag">Detection</span>
+          <span class="ptag">PowerShell</span>
         </div>
         <span class="pcard-link">View on GitHub →</span>
       </a>
@@ -624,24 +741,6 @@
     </div>
 
     <div class="grid-2">
-      <a href="https://github.com/Tirigan/Recon-Assistant" target="_blank" rel="noopener" class="pcard orange-card reveal">
-        <div class="pcard-top">
-          <span class="pcard-icon">🛰️</span>
-          <span class="pcard-badge badge-orange">python</span>
-        </div>
-        <h3 class="pcard-title">Recon-Assistant</h3>
-        <p class="pcard-desc">
-          Multi-threaded recon toolkit chaining port scanning, subdomain brute-forcing, HTTP header grabbing, and directory brute-forcing into one workflow, with a shared rate limiter and JSON/text reporting.
-        </p>
-        <div class="pcard-tags">
-          <span class="ptag">Recon</span>
-          <span class="ptag">Threading</span>
-          <span class="ptag">Rate Limiting</span>
-          <span class="ptag">Bug Bounty</span>
-        </div>
-        <span class="pcard-link">View on GitHub →</span>
-      </a>
-
       <a href="https://github.com/Tirigan/HashAdder" target="_blank" rel="noopener" class="pcard orange-card reveal">
         <div class="pcard-top">
           <span class="pcard-icon">🔑</span>
@@ -655,6 +754,27 @@
           <span class="ptag">Hashing</span>
           <span class="ptag">File Integrity</span>
           <span class="ptag">CLI</span>
+        </div>
+        <span class="pcard-link">View on GitHub →</span>
+      </a>
+
+      <a href="https://github.com/Tirigan/Recon-Assistant" target="_blank" rel="noopener" class="pcard orange-card deprecated reveal">
+        <div class="pcard-top">
+          <span class="pcard-icon">🛰️</span>
+          <div style="display:flex;gap:0.5rem;align-items:center;">
+            <span class="pcard-badge badge-orange">python</span>
+            <span class="badge-deprecated">deprecated</span>
+          </div>
+        </div>
+        <h3 class="pcard-title">Recon-Assistant</h3>
+        <p class="pcard-desc">
+          Multi-threaded recon toolkit. Superseded by reconbot, which adds LLM triage, a full ProjectDiscovery pipeline, monitor mode, and webhook alerting.
+        </p>
+        <div class="pcard-tags">
+          <span class="ptag">Recon</span>
+          <span class="ptag">Threading</span>
+          <span class="ptag">Rate Limiting</span>
+          <span class="ptag">Bug Bounty</span>
         </div>
         <span class="pcard-link">View on GitHub →</span>
       </a>
@@ -715,10 +835,9 @@
       <a href="https://github.com/Tirigan">github.com/Tirigan</a> — all content for educational purposes.
     </p>
     <div class="footer-links">
-      <a href="https://github.com/Tirigan/CyberJournal" target="_blank">CyberJournal</a>
-      <a href="https://github.com/Tirigan/HTB-Notes" target="_blank">HTB Notes</a>
-      <a href="https://github.com/Tirigan/Recon-Assistant" target="_blank">Recon-Assistant</a>
+      <a href="https://github.com/Tirigan/reconbot" target="_blank">reconbot</a>
       <a href="https://github.com/Tirigan/HashAdder" target="_blank">HashAdder</a>
+      <a href="https://github.com/Tirigan/HTB-Notes" target="_blank">HTB Notes</a>
       <a href="https://github.com/Tirigan" target="_blank">GitHub</a>
     </div>
   </div>
